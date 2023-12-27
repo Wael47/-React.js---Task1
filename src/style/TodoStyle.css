@@ -1,0 +1,17 @@
+.Todo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(191, 233, 254);
+}
+
+.isCompleted {
+  padding: 10px;
+  background: green;
+}
+
+.isIncomplete {
+  padding: 10px;
+  background: red;
+}
