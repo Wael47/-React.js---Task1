@@ -6,9 +6,11 @@ const Todo = (props) => {
   return (
     <div className="Todo">
       <h2>{todo.title}</h2>
-      <p className={todo.completed ? "isCompleted" : "isIncomplete"}>
-        {todo.completed ? "Completed" : "Incomplete"}
-      </p>
+      <div>
+        <samp className={todo.completed ? "isCompleted" : "isIncomplete"}>
+          {todo.completed ? "Completed" : "Incomplete"}
+        </samp>
+      </div>
     </div>
   );
 };

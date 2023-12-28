@@ -27,16 +27,28 @@ const list = [
 
 function App() {
   const [todos, setTodos] = useState(list);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  const addTodo = (title) => {
     const todo = {
       id: todos.length + 1,
-      title: e.target.elements.title.value,
+      title: title,
       completed: false,
     };
     setTodos([...todos, todo]);
+  };
+  const deleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+
+    setTodos(newTodos);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTodo(e.target.elements.title.value);
     e.target.elements.title.value = "";
   };
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -46,7 +58,7 @@ function App() {
         <input type="submit" value={"Add Todo"} />
       </form>
 
-      <TodoList todoList={todos} />
+      <TodoList todoList={todos} onDeleteTodo={deleteTodo} />
     </div>
   );
 }

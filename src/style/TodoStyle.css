@@ -1,4 +1,9 @@
+.TodoList {
+  display: flex;
+}
+
 .Todo {
+  width: 100%;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -7,11 +12,13 @@
 }
 
 .isCompleted {
+  margin-right: 5px;
   padding: 10px;
   background: green;
 }
 
 .isIncomplete {
   padding: 10px;
+  margin-right: 5px;
   background: red;
 }
